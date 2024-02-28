@@ -22,16 +22,43 @@ class _ApplicationState extends ConsumerState<Application> {
       debugShowCheckedModeBanner: false,
       routerConfig: appRouter,
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          color: kPrimaryColor,
+          titleTextStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w700,
+            color: kBlackColor,
+          ),
+        ),
         canvasColor: const Color(0xFFF9F9F9),
         iconTheme: const IconThemeData(
-          color: Colors.black,
+          color: kBlackColor,
           size: 24,
         ),
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: kPrimaryColor,
         brightness: Brightness.light,
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
-        textTheme: const TextTheme(),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: kPrimaryColor,
+            secondary: kBlackColor,
+            primary: kPrimaryColor),
+        textTheme: const TextTheme(
+          labelSmall: TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.w400,
+            color: kBlackColor,
+          ),
+          titleSmall: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+            color: kBlackColor,
+          ),
+          bodySmall: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w300,
+            color: kBlackColor,
+          ),
+        ),
       ),
       restorationScopeId: 'root',
     );
